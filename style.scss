@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.mobile-menu{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end ;
+    &__button{
+        width: 35px;
+        height: 35px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-self: flex-end;
+        z-index: 2;
+        &:active{
+            span:nth-child(2){
+                display: none;
+            }
+            span:first-child{
+                transform: rotate(40deg) translateY(20px) translateX(15px);
+            }
+            span:last-child{
+                transform: rotate(-40deg) translateY(-4px);
+            }
+        }
+        span{
+            width: 35px;
+            height: 5px;
+            background-color: #000;
+        }
+    }
+
+    &__list{
+        width: 100%;
+        position: absolute;
+        background-color: #ccc;
+        z-index: 1;
+        height: 0;
+        overflow: hidden;
+        transition: .3s;
+    }
+}
